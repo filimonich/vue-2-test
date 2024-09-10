@@ -1,0 +1,18 @@
+@import './layout/layout.scss';
+@import './blocks/quiz.scss';
+@import './blocks/answers.scss';
+@include reset();
+
+body,
+html {
+  display: flex;
+  box-sizing: border-box;
+  min-height: 100vh;
+  flex-flow: column nowrap;
+  font-size: #{$basesize}px;
+  font-family: "MR", Arial, sans-serif;
+  line-height: 1.2;
+  color: $black;
+  background-color: $white;
+  scroll-behavior: smooth;
+}

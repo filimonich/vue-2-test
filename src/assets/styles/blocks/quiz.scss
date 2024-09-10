@@ -1,0 +1,105 @@
+.quiz {
+  display: flex;
+  flex-direction: column;
+  width: 886px;
+  margin: 0 auto;
+
+  &__title {
+    @include h1;
+    padding: 83px 0 20px;
+    margin: 0;
+  }
+
+  &__card {
+    height: 528px;
+    padding: 40px;
+    border-radius: 20px;
+    background-color: $background-card;
+  }
+
+  &__question {
+    @include question-text;
+    font-size: 24px;
+    padding-bottom: 21px;
+  }
+
+  &__answer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0 0 21px;
+    @include base-text;
+  }
+
+  &__values {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0 4px;
+    @include question-text;
+    font-size: 16px;
+  }
+
+  &__progress {
+    position: relative;
+    width: 100%;
+  }
+
+  &__progress-bar {
+    position: relative;
+    background-color: $background-card;
+    height: 13px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  &__progress-current {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: $violet;
+    border-radius: 10px;
+  }
+
+  &__progress-counter {
+    position: absolute;
+    top: 200%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    color: $black;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  &__answer input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  &__answer input[type="radio"]+span {
+    display: inline-block;
+    position: relative;
+    padding-left: 40px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  &__answer input[type="radio"]+span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    border: 2px solid $black;
+    border-radius: 50%;
+  }
+
+  &__answer input[type="radio"]:checked+span:before {
+    background-color: $violet;
+    border: 2px solid $violet;
+  }
+}
